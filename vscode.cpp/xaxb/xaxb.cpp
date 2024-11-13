@@ -49,13 +49,13 @@ int main() {
 			system("pause");
 			return 0;
 		}
-		bool numeber;
+		bool number;
 		bool repeated;
 		
 		if(abcd>9876||abcd<123){
 			cout<<"should be 4 number"<<endl;
 			//j++; 
-			numeber=true;
+			number=true;
 		}
 		
 		if(a!=b&&a!=c&&a!=d&&b!=c&&c!=d&&b!=d){
@@ -65,7 +65,7 @@ int main() {
 			j++;
 			repeated=true;	
 		}
-		if(repeated==true&&numeber==true){
+		if(repeated==true&&number==true){
 			j--;
 		}	
 	}

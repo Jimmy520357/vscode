@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>colors</title>
+</head>
+<body style="background-color:black;">
+    <h1 style="color:red">hello world !</h1>
+    <h1 style="color:rgb(0, 8, 255)">good morning !</h1>
+    <h1 style="color:rgb(255, 251, 0)">piyan !</h1>
+
+    <br>
+    
+    <p style="background-color:rgb(0, 0, 0) ; color:antiquewhite">
+        我個人認為線段樹就應該套啟發式合併，因為這個平面圖的邊數很容易直接影響到
+        Euler Cycle 的常數。你往裡查詢的時候，一瞬間他就會產生大量的 DP cost，俗稱掃描
+        線，會嚴重影響四邊形優化的複雜度，以至於對整個矩陣，和遞迴的 stack overflow。
+        再或者說透過這歐拉定理很容易推斷出帶隨機的 Link Cut Tree，他是可以動態維護平面上的凸包，
+        所以說不管這轉移點單調的凹凸是否具有slope trick，mod 底下是否存在原根，都不會影響到樹直
+        徑跟最佳子結構的線性組合。
+    </p>
+    
+</body>
+</html>
