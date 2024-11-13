@@ -4,7 +4,6 @@
 #include<time.h>
 #include<cstdlib>
 using namespace std;
-//run this program using the console pauser or add your own getch, system("pause") or input loop 
 
 int main() {
 		
@@ -26,32 +25,37 @@ int main() {
 			continue;
 		}		
 	
-	
+	int abcd;
 	int a,b,c,d;
 	int answer[]={q,w,e,r};
 	int end=1;
 
 	for(int k=0;k<end;k++){
 		for(int i=1,j=2;i<j;i++){
-		cin>>a;
-		cin>>b;
-		cin>>c;
-		cin>>d;
-		
+		cin>>abcd;
+		a=abcd/1000;
+
+		if(a<1){
+			a=0;
+		}
+		b=(abcd-1000*a)/100;
+		c=(abcd-1000*a-100*b)/10;
+		d=(abcd-1000*a-100*b-10*c);
+	
+	
 		if(a==0&&b==0&&c==0&&d==0){
-			cout<<q<<w<<e<<r<<endl;
+			cout<<"the answer is : "<<q<<w<<e<<r<<endl;
 			cout<<"game over\n";
-			return 0;
-			cout<<"press enter to continue\n";
-			cin.get();
+			system("pause");
 			return 0;
 		}
-		bool w;
-		bool q;
-		if(a>9||a<0||b>9||b<0||c>9||c<0||d>9||d<0){
-			cout<<"should be between 0 ~ 9 "<<endl;
-			j++; 
-			w=true;
+		bool numeber;
+		bool repeated;
+		
+		if(abcd>9876||abcd<123){
+			cout<<"should be 4 number"<<endl;
+			//j++; 
+			numeber=true;
 		}
 		
 		if(a!=b&&a!=c&&a!=d&&b!=c&&c!=d&&b!=d){
@@ -59,9 +63,9 @@ int main() {
 		}else{
 			cout<<"can not repeated"<<endl;
 			j++;
-			q=true;	
+			repeated=true;	
 		}
-		if(w==true&&q==true){
+		if(repeated==true&&numeber==true){
 			j--;
 		}	
 	}
@@ -89,16 +93,19 @@ int main() {
 	if(guess[3]==answer[0]||guess[3]==answer[1]||guess[3]==answer[2]){
 		y=y+1;
 	}
-	
+	do{
 	cout<<x<<"A"<<y<<"B"<<endl;
+	cout<<"-------"<<endl;
+	}while(q=false);
 	
+
 	if(x!=4){
 		end++;
 	}
 	
 		if(x==4&&y==0){
 			cout<<"Congratulations"<<endl;
-			cout<<"the answer is "<<q<<w<<e<<r<<endl; 
+			cout<<"the answer is "<<answer[0]<<answer[1]<<answer[2]<<answer[3]<<endl; 
 		}
 		if(x==4&&y==0){
 			cout<<"press y or Y to continue,n or N to end "<<endl;
